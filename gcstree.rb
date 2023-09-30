@@ -8,17 +8,17 @@ class Gcstree < Formula
   version "0.0.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Darwin_arm64.tar.gz"
-      sha256 "441d9f38f824263460b6ffa62d5a972c39a8478d66c3dfb91a655e3aff95938c"
+    if Hardware::CPU.intel?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Darwin_x86_64.tar.gz"
+      sha256 "b363913c81caf6b9bf3ac788b3a861b8488df0f19b4769940bb836d748445863"
 
       def install
         bin.install "gcstree"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Darwin_x86_64.tar.gz"
-      sha256 "df8808b2b5b7c12674b430bb12c8016462ea794ec8d45142c254305e72bea00f"
+    if Hardware::CPU.arm?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Darwin_arm64.tar.gz"
+      sha256 "ab34f23d875faf41dbb60ff6d083b3960372590a57223a4046ba16ad46ea9e2a"
 
       def install
         bin.install "gcstree"
@@ -29,7 +29,7 @@ class Gcstree < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Linux_x86_64.tar.gz"
-      sha256 "dd3d396c399195cf0ad00f64d347cad388e977323c1cfd81b99de62b7a2db77f"
+      sha256 "36f5f224747613431155728417a6cc62ed07acdbaca968e18f9787deaa709180"
 
       def install
         bin.install "gcstree"
@@ -37,7 +37,7 @@ class Gcstree < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.3/gcstree_Linux_arm64.tar.gz"
-      sha256 "b84dc0d512321ac384e5190d8f407edbddcf08cab980d22ce4a6e9a4ad5266bd"
+      sha256 "4f2e760618b94efd8539d0165cf7ac328ed44c33edbe2ae27bced0eb9851f844"
 
       def install
         bin.install "gcstree"
