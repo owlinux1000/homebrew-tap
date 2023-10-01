@@ -5,20 +5,20 @@
 class Gcstree < Formula
   desc ""
   homepage ""
-  version "0.0.5"
+  version "1.0.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Darwin_x86_64.tar.gz"
-      sha256 "20291c4dc69d5fa7d34a34dd5023ef0b53e3c429a0e6934ef3cca786f83d1044"
+      url "https://github.com/owlinux1000/gcstree/releases/download/v1.0.0/gcstree_Darwin_x86_64.tar.gz"
+      sha256 "391fb0baeb7f1e146eb867e8ce7ee04fb043b09741a9a0a71bb0d82a93c55ce0"
 
       def install
         bin.install "gcstree"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Darwin_arm64.tar.gz"
-      sha256 "707c321ba193dc4ab59c312bf1655102dcaa27147a8ef03f097f42043315201f"
+      url "https://github.com/owlinux1000/gcstree/releases/download/v1.0.0/gcstree_Darwin_arm64.tar.gz"
+      sha256 "efa0d66e78e196140fca451600dfe760d55e2873ce8d811fde288d33b0b613ab"
 
       def install
         bin.install "gcstree"
@@ -27,17 +27,17 @@ class Gcstree < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Linux_x86_64.tar.gz"
-      sha256 "c7627166aca39bdb61acec23a05961cc970c27ccda7910f7c3c8b685d7ecf51d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v1.0.0/gcstree_Linux_arm64.tar.gz"
+      sha256 "b0d3c1374c74e0c3d2fd3a140a8d8d10d99d1251546fc529009192b06ca8e0c8"
 
       def install
         bin.install "gcstree"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Linux_arm64.tar.gz"
-      sha256 "9224c18994acf30aad4498f3a850af4d4a092ee678423ece8a2ce3ce5e3bd6ee"
+    if Hardware::CPU.intel?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v1.0.0/gcstree_Linux_x86_64.tar.gz"
+      sha256 "76768270a66e30d0fb97563e78d1713e24c9d3c03308fb09b52f885dc55ba51b"
 
       def install
         bin.install "gcstree"
