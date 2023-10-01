@@ -5,20 +5,20 @@
 class Gcstree < Formula
   desc ""
   homepage ""
-  version "0.0.4"
+  version "0.0.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.4/gcstree_Darwin_arm64.tar.gz"
-      sha256 "ed06c6a2fcde4cf6f30e9d5a13c7031cc87e0009836cd10f093a5d9b4e2a57d5"
+    if Hardware::CPU.intel?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Darwin_x86_64.tar.gz"
+      sha256 "20291c4dc69d5fa7d34a34dd5023ef0b53e3c429a0e6934ef3cca786f83d1044"
 
       def install
         bin.install "gcstree"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.4/gcstree_Darwin_x86_64.tar.gz"
-      sha256 "b02954f27f1dcc2331673d7f5f67dc70da3450dd6bc75e15e515fdf43ba0b2a0"
+    if Hardware::CPU.arm?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Darwin_arm64.tar.gz"
+      sha256 "707c321ba193dc4ab59c312bf1655102dcaa27147a8ef03f097f42043315201f"
 
       def install
         bin.install "gcstree"
@@ -27,17 +27,17 @@ class Gcstree < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.4/gcstree_Linux_arm64.tar.gz"
-      sha256 "7c6f1d5a8ca06c5b9a6ee6f3e786adc5b2f1c6e5a7b8f0c925bdfc076753989d"
+    if Hardware::CPU.intel?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Linux_x86_64.tar.gz"
+      sha256 "c7627166aca39bdb61acec23a05961cc970c27ccda7910f7c3c8b685d7ecf51d"
 
       def install
         bin.install "gcstree"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.4/gcstree_Linux_x86_64.tar.gz"
-      sha256 "4b29d5699a906ea7ad53ab83672fafca80357855dd7210b2d7139dc5080df397"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/owlinux1000/gcstree/releases/download/v0.0.5/gcstree_Linux_arm64.tar.gz"
+      sha256 "9224c18994acf30aad4498f3a850af4d4a092ee678423ece8a2ce3ce5e3bd6ee"
 
       def install
         bin.install "gcstree"
